@@ -24,15 +24,23 @@ Installation
 Follow the steps below to set up and run Live Lingo locally.
 
 Prerequisites
+
 Node.js (v14.x or higher)
+
 npm or yarn
+
 Setup
+
 Clone the repository:
 
 bash
+
 Copy code
-git clone https://github.com/aniketyd/LiveLingo.git
+
+git clone https://github.com/RaghavShiva/LiveLingo.git
+
 cd LiveLingo
+
 Install dependencies:
 
 bash
