@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Input.css';
-
+import { FaPaperPlane } from 'react-icons/fa'
 const Input = ({ setMessage, sendMessage, message }) => (
   <form className="form">
     <input
@@ -12,7 +12,8 @@ const Input = ({ setMessage, sendMessage, message }) => (
       onChange={({ target: { value } }) => setMessage(value)}
       onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
     />
-    <button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
+    <button className="sendButton" onClick={e => sendMessage(e)}>
+      <FaPaperPlane className='icon' /></button>
   </form>
 )
 
