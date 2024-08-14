@@ -13,7 +13,7 @@ const server = http.createServer(app);
 app.use(cors());
 const io = require('socket.io')(server, {
   cors: {
-    origin: "http://localhost:3000", // Allow your frontend URL
+    origin: "https://livelingo.netlify.app/", // Allow your frontend URL
     methods: ["GET", "POST"]
   }
 });
