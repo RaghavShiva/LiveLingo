@@ -13,7 +13,7 @@ const server = http.createServer(app);
 app.use(cors());
 const io = require('socket.io')(server, {
   cors: {
-    origin: "https://live-front-jet.vercel.app/", // Allow your frontend URL
+    origin: "https://live-front-jet.vercel.app", // Allow your frontend URL
     methods: ["GET", "POST"]
   }
 });
