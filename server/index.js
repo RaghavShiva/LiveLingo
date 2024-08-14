@@ -9,20 +9,27 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
-
+// const io = socketio(server);
 app.use(cors());
+const io = require('socket.io')(server, {
+  cors: {
+    origin: "http://localhost:3000", // Allow your frontend URL
+    methods: ["GET", "POST"]
+  }
+});
+
 app.use(router);
 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => {
+  // console.log('con')
   socket.on('join', ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
-    if(error) return callback(error);
+    if (error) return callback(error);
 
     socket.join(user.room);
 
-    socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.`});
+    socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.` });
     socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
 
     io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
@@ -33,17 +40,22 @@ io.on('connect', (socket) => {
   socket.on('sendMessage', (message, callback) => {
     const user = getUser(socket.id);
 
+    if (!user) {
+      console.error(`User not found for socket ID: ${socket.id}`);
+      return callback({ error: 'User not found' });
+    }
     io.to(user.room).emit('message', { user: user.name, text: message });
-
+    io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
     callback();
   });
 
-  socket.on('disconnect', () => {
+  socket.on('disconnection', () => {
+    // console.log('discon')
     const user = removeUser(socket.id);
 
-    if(user) {
+    if (user) {
       io.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has left.` });
-      io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room)});
+      io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
     }
   })
 });
