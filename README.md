@@ -1,9 +1,9 @@
 # Realtime Chat Application
 # Group project
  run ```npm i && npm start``` for both client and server side to start the development server
- #Real-Time Chat Application
+#Live Lingo - Real-Time Chat Application
 Overview
-This project is a real-time chat application built using Express, React.js, and Node.js, with Socket.io for handling real-time communication. The application features seamless, low-latency messaging and a user-friendly interface with a bottom-up scrolling chat feature.
+Live Lingo is a real-time chat application built using Express, React.js, and Node.js, with Socket.io for handling real-time communication. The application features seamless, low-latency messaging and a user-friendly interface with a bottom-up scrolling chat feature.
 
 Features
 Real-Time Communication: Instant messaging with live updates.
@@ -21,7 +21,7 @@ Node.js
 Express
 Socket.io
 Installation
-Follow the steps below to set up and run the application locally.
+Follow the steps below to set up and run Live Lingo locally.
 
 Prerequisites
 Node.js (v14.x or higher)
@@ -31,8 +31,8 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/realtime-chat-app.git
-cd realtime-chat-app
+git clone https://github.com/aniketyd/LiveLingo.git
+cd LiveLingo
 Install dependencies:
 
 bash
@@ -60,7 +60,7 @@ Access the application:
 Open your browser and navigate to http://localhost:3000.
 
 Usage
-Open the application in your browser.
+Open Live Lingo in your browser.
 Enter a username to join a chat room.
 Start sending and receiving messages in real-time.
 Project Structure
@@ -68,13 +68,17 @@ client/: Contains the React.js frontend code.
 server/: Contains the Express and Node.js backend code.
 public/: Static assets like images, fonts, etc.
 Contributing
-If you would like to contribute to this project, feel free to fork the repository and submit a pull request.
+If you would like to contribute to Live Lingo, feel free to fork the repository and submit a pull request.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the aniket group of license
 
 Contact
-For any questions or issues, please contact [your-email@example.com].
+For any questions or issues, please contact [aniketyd26@gmail.com].
+
+
+
+
 
 
 
