@@ -62,7 +62,7 @@ public/: Static assets like images, fonts, etc.
 If you would like to contribute to Live Lingo, feel free to fork the repository and submit a pull request.
 
 # License
-This project is licensed under the aniket group of license 😅
+This project is licensed under the MIT license 
 
 # Contact
 For any questions or issues, please contact [aniketyd26@gmail.com] [raghavshiva97.6@gmail.com].
