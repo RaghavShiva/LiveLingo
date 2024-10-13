@@ -2,6 +2,9 @@
 # Group project
  run ```npm i && npm start``` for both client and server side to start the development server
 # Live Lingo - Real-Time Chat Application
+![Screenshot 2024-10-13 232735](https://github.com/user-attachments/assets/19a73813-335d-49f9-87d0-48856a631817)
+
+![image](https://github.com/user-attachments/assets/083cbfb6-9b97-4994-a462-a545b660fbdf)
 
 # Overview
 Live Lingo is a real-time chat application built using Express, React.js, and Node.js, with Socket.io for real-time communication.
