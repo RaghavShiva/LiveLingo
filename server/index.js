@@ -49,8 +49,8 @@ io.on('connection', (socket) => {
     callback();
   });
 
-  socket.on('disconnection', () => {
-    // console.log('discon')
+  socket.on('disconnect', () => {
+    
     const user = removeUser(socket.id);
 
     if (user) {
